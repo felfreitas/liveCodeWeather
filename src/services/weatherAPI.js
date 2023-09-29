@@ -36,6 +36,14 @@ export const useWeatherService =()=>{
         }
     }
 
+    //intervalo de 30minutos
+    const intervalo = 30*60*1000;
+    const atualizaDados = ()=>{
+        getWeather();
+        setInterval(getWeather,intervalo);
+    };
+
+    atualizaDados();
 
     return {getWeather};
 
