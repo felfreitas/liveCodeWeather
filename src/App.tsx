@@ -8,7 +8,7 @@ function App() {
       <Container>
         <Row className="justify-content-md-center">
 
-          <h1 style={{textAlign: 'center'}}>Weather</h1>
+          <h1 style={{textAlign: 'center'}}> LiveCode  Weather</h1>
 
           <Weather />
         </Row>

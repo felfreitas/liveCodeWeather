@@ -10,15 +10,15 @@ import Col from 'react-bootstrap/Col';
 type weatherRetorno = {
     cidade: string;
     temperaturaMax: number;
+    descClima:string;
 }
 interface weatherApi {
     cidade: string;
     temperaturaMax: number;
+    descClima:string;
 }
 
 function Weather() {
-
-
 
     const weatherService = useWeatherService();
 
@@ -31,6 +31,7 @@ function Weather() {
                     const dataRetorno: weatherApi = {
                         cidade: resp.cidade,
                         temperaturaMax: resp.temperaturaMax,
+                        descClima:resp.descricaoClima
                     }
                     setDadosTempo([dataRetorno])
                 }
@@ -45,23 +46,19 @@ function Weather() {
             {dadosTempo.map((temp) => {
                 return (
                     <>
-                        {/* <p> Cidade:{temp.cidade} </p>
-                        <p> temperatura máxima: {temp.temperaturaMax} ºC </p>
-                        <p> Descrição do clima: </p>
-                        <p> outros detalhes relevantes</p> */}
-
-
-
+                     
                         <Container>
                             <Row className="justify-content-md-center">
                                 <Col md={{ span: 6, offset: 3 }}>
 
-                                    <Card style={{ width: '18rem' }}>
+                                    <Card style={{ width: '18rem', textAlign:'center' }}>
                                         <Card.Body>
-                                            <Card.Title>Tempo Real</Card.Title>
-                                            <Card.Subtitle className="mb-2 text-muted">{temp.cidade}</Card.Subtitle>
+                                            <Card.Title>{temp.cidade}</Card.Title>
+                                            <Card.Subtitle className="mb-2 text-muted">Cidade: {temp.cidade}</Card.Subtitle>
                                             <Card.Text>
-                                                <p>Temperatura máxima: {temp.temperaturaMax}</p>
+                                                <p>Temperatura máxima:{temp.temperaturaMax}</p>
+                                                <p>Descrição do Clima:{temp.descClima}</p>
+                                                <p>Temperatura máxima:{temp.temperaturaMax}</p>
                                             </Card.Text>
 
                                         </Card.Body>
