@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-
-const codeDescriptionWMO =  // weatherCode
+// weatherCode
+const codeDescriptionWMO =  
 {0: 'Céu limpo',
 1: 'Principalmente claro',
 2: 'Parcialmente nublado' ,
@@ -20,6 +20,7 @@ export const useWeatherService =()=>{
        
         const resp = await axios.get(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m&daily=weathercode,temperature_2m_max,apparent_temperature_min&timezone=America%2FSao_Paulo&forecast_days=1`);
        
+        //teria que melhorar pois
         const weatherCode =  resp.data.daily.weathercode[0];
         const descClima = codeDescriptionWMO[weatherCode];
 
@@ -28,11 +29,13 @@ export const useWeatherService =()=>{
         return {
             cidade: 'São Paulo',
             temperaturaMax: resp.data.daily.temperature_2m_max[0],
-            descricaoClima: descClima
+            temperaturaMin: resp.data.daily.apparent_temperature_min[0],
+            descricaoClima: descClima? descClima :'sem resultado'
             
             // resp
         }
     }
+
 
     return {getWeather};
 

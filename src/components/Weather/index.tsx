@@ -10,11 +10,13 @@ import Col from 'react-bootstrap/Col';
 type weatherRetorno = {
     cidade: string;
     temperaturaMax: number;
+    temperaturaMin: number;
     descClima:string;
 }
 interface weatherApi {
     cidade: string;
     temperaturaMax: number;
+    temperaturaMin: number;
     descClima:string;
 }
 
@@ -31,6 +33,7 @@ function Weather() {
                     const dataRetorno: weatherApi = {
                         cidade: resp.cidade,
                         temperaturaMax: resp.temperaturaMax,
+                        temperaturaMin: resp.temperaturaMin,
                         descClima:resp.descricaoClima
                     }
                     setDadosTempo([dataRetorno])
@@ -38,6 +41,7 @@ function Weather() {
 
             })
 
+        
     }, [])
 
 
@@ -54,11 +58,11 @@ function Weather() {
                                     <Card style={{ width: '18rem', textAlign:'center' }}>
                                         <Card.Body>
                                             <Card.Title>{temp.cidade}</Card.Title>
-                                            <Card.Subtitle className="mb-2 text-muted">Cidade: {temp.cidade}</Card.Subtitle>
+                                            {/* <Card.Subtitle className="mb-2 text-muted">Cidade: {temp.cidade}</Card.Subtitle> */}
                                             <Card.Text>
-                                                <p>Temperatura máxima:{temp.temperaturaMax}</p>
-                                                <p>Descrição do Clima:{temp.descClima}</p>
-                                                <p>Temperatura máxima:{temp.temperaturaMax}</p>
+                                                <p>Temperatura máx: {temp.temperaturaMax} ºC</p>
+                                                <p>Temperatura min: {temp.temperaturaMin} ºC</p>
+                                                <p>Descrição do Clima: {temp.descClima}</p>
                                             </Card.Text>
 
                                         </Card.Body>
