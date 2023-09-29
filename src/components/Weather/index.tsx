@@ -49,32 +49,33 @@ function Weather() {
                         <p> temperatura máxima: {temp.temperaturaMax} ºC </p>
                         <p> Descrição do clima: </p>
                         <p> outros detalhes relevantes</p> */}
-          
 
 
-            <Container>
-                <Row  className="justify-content-md-center">
-                    <Col md={{ span: 6, offset: 3 }}>
 
-                        <Card style={{ width: '18rem' }}>
-                            <Card.Body>
-                                <Card.Title>Tempo Real</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted">{temp.cidade}</Card.Subtitle>
-                                <Card.Text>
-                                    <p>Temperatura máxima: {temp.temperaturaMax}</p>
-                                </Card.Text>
-                               
-                            </Card.Body>
-                        </Card>
+                        <Container>
+                            <Row className="justify-content-md-center">
+                                <Col md={{ span: 6, offset: 3 }}>
 
-                    </Col>
-                </Row>
-            </Container>
-            </>
+                                    <Card style={{ width: '18rem' }}>
+                                        <Card.Body>
+                                            <Card.Title>Tempo Real</Card.Title>
+                                            <Card.Subtitle className="mb-2 text-muted">{temp.cidade}</Card.Subtitle>
+                                            <Card.Text>
+                                                <p>Temperatura máxima: {temp.temperaturaMax}</p>
+                                            </Card.Text>
+
+                                        </Card.Body>
+                                    </Card>
+
+                                </Col>
+                            </Row>
+                        </Container>
+                    </>
                 )
             })
 
             }
+
         </div>
     )
 }

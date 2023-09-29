@@ -4,16 +4,18 @@ import Weather from './components/Weather';
 
 function App() {
   return (
-    <Container>
-      <Row>
+    <div>
+      <Container>
+        <Row className="justify-content-md-center">
 
-      <h1>Weather</h1>
-  
-      <Weather />
-      </Row>
+          <h1 style={{textAlign: 'center'}}>Weather</h1>
 
-    </Container>
-   
+          <Weather />
+        </Row>
+
+      </Container>
+    </div>
+
   );
 }
 

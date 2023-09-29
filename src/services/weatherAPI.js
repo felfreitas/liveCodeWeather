@@ -26,3 +26,12 @@ export const useWeatherService =()=>{
     return {getWeather};
 
 }   
+
+
+
+// weatherCode
+// Code	Description
+// 0 céu limpo
+// 1 Principalmente claro,
+// 2 parcialmente nublado 
+// 3 encoberto
